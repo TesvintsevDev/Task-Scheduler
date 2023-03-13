@@ -52,3 +52,24 @@ body {
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
 }
+
+.calendar__cell {
+  padding: 20px;
+}
+
+.calendar__cell_week-day {
+  background-color: bisque;
+}
+
+.calendar__cell_weekend {
+  background-color: rgb(210, 255, 196);
+}
+
+.calendar__cell_day {
+  background-color: rgb(203, 255, 254);
+}
+
+.calendar__cell_day-weekend {
+  background-color: rgb(141, 151, 214);
+}
+

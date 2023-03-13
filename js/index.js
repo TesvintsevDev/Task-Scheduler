@@ -2,7 +2,6 @@ const monthsList = ['Январь', 'Февраль', 'Март', 'Апрель'
 const weekDaysList = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 
 // Выбранная дата
-
 const currentDate = new Date()
 const selectMonth = currentDate.getMonth()
 const selectYear = currentDate.getFullYear()
@@ -10,8 +9,8 @@ const selectYear = currentDate.getFullYear()
 const $calendar = document.getElementById('calendar')
 // console.log($calendar);
 
-// Проверка сегодняшнего дня
 
+// Проверка сегодняшнего дня
 function checkToday(selectYear, selectMonth, currentDate) {
 	const day = new Date().getDate()
 	const month = new Date().getMonth()
@@ -21,7 +20,6 @@ function checkToday(selectYear, selectMonth, currentDate) {
 }
 
 // Шапка календаря
-
 function createCalendarHead(selectMonth, selectYear) {
 	const $head = document.createElement('div')
 	const $month = document.createElement('div')
@@ -43,13 +41,32 @@ function createCalendarHead(selectMonth, selectYear) {
 }
 
 // Тело календаря
-
 function createCalendarBody() {
 	const $body = document.createElement('div')
 	$body.classList.add('calendar__body')
 	return $body
 
-	console.log($body);
+	// console.log($body);
+}
+
+// День недели
+function createWeekDayCell(index) {
+	const $weekDayCell = document.createElement('div');
+	$weekDayCell.classList.add('calendar__cell', 'calendar__cell_week-day');
+	$weekDayCell.textContent = weekDaysList[index]
+
+	if (index > 4) {
+		$weekDayCell.classList.add('calendar__cell_weekend')
+	}
+
+	return $weekDayCell
+}
+
+// Шапка с днями недели
+function createCalendarWeekDays($body) {
+	for (let i = 0; i < weekDaysList.length; i++) {
+		$body.append(createWeekDayCell(i));
+	}
 }
 
 
@@ -66,6 +83,8 @@ function render(selectMonth, selectYear) {
 
 	const $body = createCalendarBody()
 	$calendar.append($body)
+
+	createCalendarWeekDays($body)
 
 
 }
