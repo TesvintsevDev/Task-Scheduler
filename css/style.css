@@ -28,19 +28,24 @@ body {
     padding: 40px 15px;
 }
 
+.full-calendar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
 .calendar {
     display: grid;
-    width: 800px;
-    gap: 10px;
+    gap: 5px;
 }
 
 .calendar__head {
     display: grid;
-    gap: 10px;
+    gap: 5px;
     background-color: darkblue;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
 }
 
 .calendar__month {
@@ -54,25 +59,22 @@ body {
 }
 
 .calendar__cell {
-    padding: 20px;
+    padding: 5px;
 }
 
-.calendar__cell_week-day {
-    background-color: bisque;
-}
+.calendar__cell_week-day {}
 
 .calendar__cell_weekend {
-    background-color: rgb(210, 255, 196);
+    color: red
 }
 
-.calendar__cell_day {
-    background-color: rgb(203, 255, 254);
-}
+.calendar__cell_day {}
 
 .calendar__cell_day-wekend {
-    background-color: rgb(141, 151, 214);
+    color: red
 }
 
 .calendar__cell_day-today {
-    background-color: rgb(214, 141, 210);
+    background-color: rgb(154, 47, 149);
+    color: white;
 }
