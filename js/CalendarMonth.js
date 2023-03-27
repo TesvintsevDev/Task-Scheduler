@@ -9,7 +9,7 @@ export class CalendarMonth {
 
         this.$container = $container
 
-        // Если параметры даты указади при создании экземпляра класса
+        // Если параметры даты указаны при создании экземпляра класса
         if (currentYear !== null) {
             this._date.setFullYear(currentYear)
         }
