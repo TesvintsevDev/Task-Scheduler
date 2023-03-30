@@ -1,2 +1,1 @@
-# Task-Scheduler
-Task scheduler in vanilla JS
+# Task scheduler in vanilla JS
